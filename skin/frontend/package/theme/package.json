@@ -1,0 +1,19 @@
+{
+  "name": "starter-kit",
+  "version": "1.0.0",
+  "description": "Magento starter kit",
+  "main": "Gruntfile.js",
+  "keywords": [
+    "starter",
+    "kit"
+  ],
+  "author": "OnePica",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-imagemin": "~0.8.0",
+    "grunt-contrib-uglify": "~0.5.1",
+    "grunt-svgmin": "~0.4.0"
+  }
+}

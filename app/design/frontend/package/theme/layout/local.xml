@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <!-- js vendor -->
+            <action method="addItem"><type>skin_js</type><name>js/vendor/jquery-1.11.1.min.js</name></action>
+
+            <!-- js all plugins -->
+            <action method="addItem"><type>skin_js</type><name>js/plugins.min.js</name></action>
+
+            <!-- js init -->
+            <action method="addItem"><type>skin_js</type><name>js/app/main.js</name></action>
+        </reference>
+    </default>
+</layout>

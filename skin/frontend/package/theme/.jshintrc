@@ -1,0 +1,14 @@
+{
+    "bitwise"       : true,
+    "camelcase"     : true,
+    "curly"         : true,
+    "noarg"         : true,
+    "noempty"       : true,
+    "strict"        : true,
+    "quotmark"      : "double",
+    "indent"        : 4,
+
+    "browser"       : true,
+    "jquery"        : true,
+    "prototypejs"   : true
+}

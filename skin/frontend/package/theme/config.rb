@@ -13,7 +13,7 @@ environment = :production
 output_style = :compact
 line_comments = false
 
-/* use LF line separator */
+# use LF line separator
 sass_options = {
     :unix_newlines => true
 }

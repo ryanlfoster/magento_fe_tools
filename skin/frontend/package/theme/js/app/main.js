@@ -1,27 +1,24 @@
 var APP = APP || {};
 
 APP.Main = (function($) {
-    /* Important! Use strict mode */
     "use strict";
 
     var privateVar = "I\'m private variable";
-
     /* Stash var */
-    var base = {};
+    var api = {};
 
     /* Methods */
-    base.init = function() {
-        base.method1();
+    api.init = function() {
+        api.someMethod();
     };
 
-    base.publicVar = "I\'m public variable";
+    api.publicVar = "public variable";
 
-    base.method1 = function() {
-        console.log("I\'m method 1");
+    api.someMethod = function() {
+        console.log("I\'m some method which return " + api.publicVar);
     };
 
-    /* Make "base" public */
-    return base;
+    return api;
 })(jQuery);
 
 jQuery(APP.Main.init);

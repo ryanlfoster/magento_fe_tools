@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
         uglify: {
@@ -33,22 +32,49 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        compass: {
+            watch: {
+                options: {
+                    watch: true,
+                    config: "config.rb"
+                }
+            }
+        },
+        autoprefixer: {
+            dist: {
+                files: {
+                    "css/styles.css": "css/styles.build.css"
+                }
+            }
+        },
         watch: {
-            files: [
-                "**/*.js"
-            ]
+            styles: {
+                files: ["css/styles.build.css"],
+                tasks: ["autoprefixer"]
+            }
+        },
+        concurrent: {
+            watch: {
+                tasks: ["compass:watch", "watch"],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
         }
     });
 
     /* Load tasks */
+    grunt.loadNpmTasks("grunt-contrib-compass");
+    grunt.loadNpmTasks("grunt-autoprefixer");
     grunt.loadNpmTasks("grunt-contrib-imagemin");
     grunt.loadNpmTasks("grunt-svgmin");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-uglify");
+    grunt.loadNpmTasks("grunt-concurrent");
 
-    /* Run tasks */
-    grunt.registerTask("ugly", ["uglify"]);
-    grunt.registerTask("img", ["imagemin"]);
+    /* Custom task(s). */
+    grunt.registerTask("default", ["concurrent"]);
+    grunt.registerTask("js", ["uglify"]);
+    grunt.registerTask("image", ["imagemin"]);
     grunt.registerTask("svg", ["svgmin"]);
-
 };

@@ -1,21 +1,40 @@
+/* Resolve jQuery conflicts */
+jQuery.noConflict();
+
+/**
+ * Application namespace
+ * @type {APP|*|{}}
+ */
 var APP = APP || {};
 
+/**
+ * Application module
+ */
 APP.Main = (function($) {
     "use strict";
 
     var privateVar = "I\'m private variable";
-    /* Stash var */
+
     var api = {};
 
-    /* Methods */
+    /**
+     * Module initialize method
+     */
     api.init = function() {
         api.someMethod();
     };
 
-    api.publicVar = "public variable";
+    /**
+     * Public property
+     * @type {string}
+     */
+    api.publicProperty = "public Property";
 
+    /**
+     * Module method
+     */
     api.someMethod = function() {
-        console.log("I\'m some method which return " + api.publicVar);
+        console.log("I\'m some method which return " + api.publicProperty);
     };
 
     return api;

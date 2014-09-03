@@ -43,14 +43,17 @@ module.exports = function(grunt) {
         autoprefixer: {
             dist: {
                 files: {
-                    "css/styles.css": "css/styles.build.css"
+                    "css/styles.css": "css/styles.css"
                 }
             }
         },
         watch: {
             styles: {
-                files: ["css/styles.build.css"],
-                tasks: ["autoprefixer"]
+                files: ["css/styles.css"],
+                tasks: ["autoprefixer"],
+                options: {
+                    spawn: false
+                }
             },
             buildPlugins: {
                 files: ["js/plugins/**/*.js"],

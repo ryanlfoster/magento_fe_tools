@@ -24,6 +24,8 @@ To run build process just type in terminal
 ```
 $ grunt
 ```
+this command run default grunt task which invoke: sass watcher, autoprefixer, build all js plugin into one.
+
 Other grunt utils look at
 [Image optimization](https://github.com/IOZ/magento_starter_kit/wiki/Grunt-utilities#1-compress-images), [SVG optimization](https://github.com/IOZ/magento_starter_kit/wiki/Grunt-utilities#2-compress-svg-files).
 

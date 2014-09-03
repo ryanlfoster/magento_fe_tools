@@ -16,10 +16,15 @@ load all plugin dependencies from **package.json**
 $ npm install
 ```
 #### Run grunt task's
+All grunt tasks described at file
+```
+skin/frontend/<package>/<theme>/Gruntfile.js
+```
 To run build process just type in terminal
 ```
 $ grunt
 ```
+
 Optimize images
 ```
 $ grunt image
@@ -28,6 +33,7 @@ Optimize svg graphics
 ```
 $ grunt svg
 ```
+For more details [Grunt utilities](https://github.com/IOZ/magento_starter_kit/wiki/Grunt-utilities)
 
 1. [SCSS config](https://github.com/IOZ/magento_starter_kit/wiki/Work-with-SCSS)
 2. [JSHint code quality tool](https://github.com/IOZ/magento_starter_kit/wiki/JSHint---code-quality-tool)

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
             },
             my_target: {
                 files: {
-                    "js/plugins.min.js": ["js/plugins/*.js"]
+                    "js/plugins.min.js": ["js/plugins/**/*.js"]
                 }
             }
         },
@@ -51,6 +51,10 @@ module.exports = function(grunt) {
             styles: {
                 files: ["css/styles.build.css"],
                 tasks: ["autoprefixer"]
+            },
+            buildPlugins: {
+                files: ["js/plugins/**/*.js"],
+                tasks: ["uglify"]
             }
         },
         concurrent: {

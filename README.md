@@ -25,15 +25,10 @@ To run build process just type in terminal
 $ grunt
 ```
 
-Optimize images
-```
-$ grunt image
-```
-Optimize svg graphics
-```
-$ grunt svg
-```
-For more details [Grunt utilities](https://github.com/IOZ/magento_starter_kit/wiki/Grunt-utilities)
+[Image optimization](https://github.com/IOZ/magento_starter_kit/wiki/Grunt-utilities#1-compress-images)
+[SVG optimization](https://github.com/IOZ/magento_starter_kit/wiki/Grunt-utilities#2-compress-svg-files)
+
+
 
 1. [SCSS config](https://github.com/IOZ/magento_starter_kit/wiki/Work-with-SCSS)
 2. [JSHint code quality tool](https://github.com/IOZ/magento_starter_kit/wiki/JSHint---code-quality-tool)

@@ -24,9 +24,8 @@ To run build process just type in terminal
 ```
 $ grunt
 ```
-
-[Image optimization](https://github.com/IOZ/magento_starter_kit/wiki/Grunt-utilities#1-compress-images)
-[SVG optimization](https://github.com/IOZ/magento_starter_kit/wiki/Grunt-utilities#2-compress-svg-files)
+Other grunt utils look at
+[Image optimization](https://github.com/IOZ/magento_starter_kit/wiki/Grunt-utilities#1-compress-images), [SVG optimization](https://github.com/IOZ/magento_starter_kit/wiki/Grunt-utilities#2-compress-svg-files).
 
 
 

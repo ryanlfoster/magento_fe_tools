@@ -5,7 +5,6 @@
     "noarg"         : true,
     "noempty"       : true,
     "strict"        : true,
-    "quotmark"      : "double",
     "indent"        : 4,
 
     "browser"       : true,

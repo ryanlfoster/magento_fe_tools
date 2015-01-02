@@ -1,4 +1,4 @@
-**Magento FE Toolskit** - contains gulp tasks and design patterns. Provide comfortable environment for front-end developers and help save time.
+**Magento FE Toolskit** - package, which contains described gulp tasks and design patterns. Provide comfortable environment for front-end developers and help save time.
 
 #### Getting started
 Clone repository. 

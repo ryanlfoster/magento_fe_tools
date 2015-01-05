@@ -13,15 +13,15 @@ var header = require('gulp-header');
 var notify = require('gulp-notify');
 
 /**
- * Custom Configuration
+ * Base configuration
  */
-var paths = {
+var config = {
     styles: {
         src: 'scss/**/*.scss',
         dest: 'css',
         notify: 'CSS was compiled'
     },
-    js: {
+    scripts: {
         src: [
             'js/vendor/*.js',
             'js/plugins/*.js',
@@ -42,8 +42,8 @@ var paths = {
     }
 };
 
-if (paths.js.banner) {
-    paths.js.banner = [
+if (config.scripts.banner) {
+    config.scripts.banner = [
         '/**',
         ' * Project name - Project description',
         ' * @date - ${date}',
@@ -55,8 +55,8 @@ if (paths.js.banner) {
  * Describe Gulp Tasks
  */
 
-gulp.task('sass', function() {
-    gulp.src(paths.styles.src)
+gulp.task('styles', function() {
+    gulp.src(config.styles.src)
         .pipe(sass({
             style: 'compact',
             sourcemap: false,
@@ -64,45 +64,45 @@ gulp.task('sass', function() {
         }))
         .pipe(prefix({browsers: ['last 2 versions']}))
         .pipe(minifyCSS({keepBreaks:true}))
-        .pipe(gulp.dest(paths.styles.dest))
-        .pipe(notify(paths.styles.notify));
+        .pipe(gulp.dest(config.styles.dest))
+        .pipe(notify(config.styles.notify));
 });
 
-gulp.task('js', function() {
-    gulp.src(paths.js.src)
-        .pipe(concat(paths.js.file))
-        .pipe(header(paths.js.banner, {date: new Date()}))
-        .pipe(gulp.dest(paths.js.dest))
+gulp.task('scripts', function() {
+    gulp.src(config.scripts.src)
+        .pipe(concat(config.scripts.file))
+        .pipe(header(config.scripts.banner, {date: new Date()}))
+        .pipe(gulp.dest(config.scripts.dest))
         .pipe(rename({
-            'suffix' : paths.js.suffix
+            'suffix' : config.scripts.suffix
         }))
         .pipe(uglify())
-        .pipe(header(paths.js.banner, {date: new Date()}))
-        .pipe(gulp.dest(paths.js.dest))
-        .pipe(notify(paths.js.notify));
+        .pipe(header(config.scripts.banner, {date: new Date()}))
+        .pipe(gulp.dest(config.scripts.dest))
+        .pipe(notify(config.scripts.notify));
 });
 
-gulp.task('imagemin', function() {
-    gulp.src(paths.images.src)
+gulp.task('images', function() {
+    gulp.src(config.images.src)
         .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true}))
-        .pipe(gulp.dest(paths.images.dest));
+        .pipe(gulp.dest(config.images.dest));
 });
 
 /**
  * Watch tasks
  */
 gulp.task('watch', function() {
-    gulp.watch(paths.styles.src, ['sass']);
-    gulp.watch(paths.js.src, ['js']);
-    gulp.watch(paths.images.src, ['imagemin']);
+    gulp.watch(config.styles.src, ['styles']);
+    gulp.watch(config.scripts.src, ['scripts']);
+    gulp.watch(config.images.src, ['images']);
 });
 
 /**
  * Invoke default tasks
  */
 gulp.task('default', [
-    'sass',
-    'js',
-    'imagemin',
+    'styles',
+    'scripts',
+    'images',
     'watch'
 ]);

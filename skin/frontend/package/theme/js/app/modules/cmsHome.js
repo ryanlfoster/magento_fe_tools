@@ -1,16 +1,17 @@
 /**
- * Module: Checkout
+ * Module: Cms Home
  * @type {{}}
  */
 (function($) {
     'use strict';
 
-    APP.Checkout = {
+    APP.CmsHome = {
         config: {
-            route: 'checkout-onepage-index'
+            route: 'cms-home'
         },
         init: function() {
-            console.log('module: Checkout');
+            console.log('module: CmsHome');
         }
     };
+
 })(jQuery);

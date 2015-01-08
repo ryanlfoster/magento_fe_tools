@@ -8,6 +8,9 @@ APP.ProductList = (function($) {
     var api;
 
     api = {
+        config: {
+            route: 'catalog-product-view'
+        },
         init: function() {
             console.log('module: ProductList');
             this.methodOne();
